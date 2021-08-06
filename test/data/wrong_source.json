@@ -1,0 +1,26 @@
+[
+    {
+        "description": "Info from client",
+        "packet": [{"cmd": "Info", "protocol": 0}],
+        "from": "client",
+        "expect": "strict-fail"
+    },
+    {
+        "description": "Var from client",
+        "packet": [{"cmd": "Var", "name": "sword", "value": 1}],
+        "from": "client",
+        "expect": "strict-fail"
+    },
+    {
+        "description": "ErrorReply from client",
+        "packet": [{"cmd": "ErrorReply", "name": "Info", "reason": "unknown"}],
+        "from": "client",
+        "expect": "strict-fail"
+    },
+    {
+        "description": "Sync from server",
+        "packet": [{"cmd": "Sync"}],
+        "from": "server",
+        "expect": "strict-fail"
+    }
+]

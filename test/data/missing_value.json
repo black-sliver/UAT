@@ -1,0 +1,8 @@
+[
+    {
+        "description": "Var missing 'value'",
+        "packet": [{"cmd": "Var", "name":"sword"}],
+        "from": "server",
+        "expect": "fail"
+    }
+]

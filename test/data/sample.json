@@ -1,0 +1,103 @@
+[
+    {
+        "description": "minimal Info",
+        "packet": [{"cmd": "Info", "protocol": 0}],
+        "from": "server",
+        "expect": "success"
+    },
+    {
+        "description": "empty arrays Info",
+        "packet": [{
+            "cmd": "Info",
+            "name": "SomeGame Randomizer",
+            "version": "1.0.0-mod1.0.0",
+            "protocol": 0,
+            "features": [],
+            "slots": []
+        }],
+        "from": "server",
+        "expect": "success"
+    },
+    {
+        "description": "full Info",
+        "packet": [{
+            "cmd": "Info",
+            "name": "SomeGame Randomizer",
+            "version": "1.0.0-mod1.0.0",
+            "protocol": 0,
+            "features": ["some_feature", "another_feature"],
+            "slots": ["A", "B"]
+        }],
+        "from": "server",
+        "expect": "success"
+    },
+    {
+        "description": "full Sync",
+        "packet": [{"cmd": "Sync"}],
+        "from": "client",
+        "expect": "success"
+    },
+    {
+        "description": "slot Sync",
+        "packet": [{"cmd": "Sync", "slot": "A"}],
+        "from": "client",
+        "expect": "success"
+    },
+    {
+        "description": "unknown slot ErrorReply",
+        "packet": [{
+            "cmd": "ErrorReply",
+            "name": "Sync",
+            "argument": "slot",
+            "reason": "bad value",
+            "description": "KeyError: 'A'"
+        }],
+        "from": "server",
+        "expect": "success"
+    },
+    {
+        "description": "unknown command ErrorReply",
+        "packet": [{
+            "cmd": "ErrorReply",
+            "name": "HelloWorld",
+            "reason": "unknown cmd"
+        }],
+        "from": "server",
+        "expect": "success"
+    },
+    {
+        "description": "unknown ErrorReply",
+        "packet": [{
+            "cmd": "ErrorReply",
+            "name": "Sync",
+            "reason": "unknown"
+        }],
+        "from": "server",
+        "expect": "success"
+    },
+    {
+        "description": "non-slot Var",
+        "packet": [{"cmd": "Var", "name": "sword", "value": 1}],
+        "from": "server",
+        "expect": "success"
+    },
+    {
+        "description": "slot Var",
+        "packet": [{"cmd": "Var", "slot": "P1", "name": "sword", "value": 1}],
+        "from": "server",
+        "expect": "success"
+    },
+    {
+        "description": "multiple Var",
+        "packet": [
+            {"cmd": "Var", "name": "some_int", "value": 1},
+            {"cmd": "Var", "name": "some_str", "value": "yes"},
+            {"cmd": "Var", "name": "some_bool", "value": true},
+            {"cmd": "Var", "name": "some_null", "value": null},
+            {"cmd": "Var", "name": "some_array", "value": [1,2]},
+            {"cmd": "Var", "name": "some_object", "value": {"a":1, "b":2}}
+        ],
+        "from": "server",
+        "expect": "success"
+    }
+]

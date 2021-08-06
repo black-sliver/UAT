@@ -1,0 +1,14 @@
+[
+    {
+        "description": "server packet is not an array",
+        "packet": {"cmd": "Var", "name": "sword", "value": 1},
+        "from": "server",
+        "expect": "fail"
+    },
+    {
+        "description": "client packet is not an array",
+        "packet": {"cmd": "Sync", "slot": "P1"},
+        "from": "client",
+        "expect": "fail"
+    }
+]

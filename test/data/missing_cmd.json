@@ -1,0 +1,14 @@
+[
+    {
+        "description": "server packet missing 'cmd'",
+        "packet": [{"name": "sword", "value": 1}],
+        "from": "server",
+        "expect": "fail"
+    },
+    {
+        "desciprion": "client packet missing 'cmd'",
+        "packet": [{"slot": "P1"}],
+        "from": "client",
+        "expect": "fail"
+    }
+]

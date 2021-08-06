@@ -1,0 +1,3 @@
+[submodule "schema/UAT"]
+	path = schema/UAT
+	url = git@github.com:black-sliver/UAT.git
