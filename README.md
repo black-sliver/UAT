@@ -13,9 +13,14 @@ Checkout or submodule the `schema` branch to just get the JSON schema.
 
 ## Trackers
 
-* [PopTracker](https://github.com/black-sliver/PopTracker)
+* [PopTracker](https://github.com/black-sliver/PopTracker/tree/feature-uat) (work in progress)
 
 
 ## Applications
 
 * [UATBridge](https://github.com/black-sliver/UATBridge)
+
+
+## Libraries
+
+* C++ ASIO Server: [UATServerPP](https://github.com/black-sliver/UATServerPP)
