@@ -68,7 +68,8 @@ def main(args):
             for i, test in enumerate(data):
                 commands_schema = from_server_schema if test['from'] == 'server' else from_client_schema
                 suite.addTest(make_packet_test(packet_schema, commands_schema,
-                              test['packet'], test['expect'], f'{data_file.name}[{i}]'))
+                              test['packet'], test['expect'], f'{data_file.name}[{i}]',
+                              test['description'] if 'description' in test else ''))
 
     unittest.TextTestRunner().run(suite)
 
