@@ -6,19 +6,20 @@ game/mod/program to an auto-tracker.
 
 ## Protocol
 
-See [PROTOCOL.md](PROTOCOL.md) for the procol
+See [PROTOCOL.md](PROTOCOL.md) for the protocol
 and [schema](schema) for a JSON schema.
 Checkout or submodule the `schema` branch to just get the JSON schema.
 
 
 ## Trackers
 
-* [PopTracker](https://github.com/black-sliver/PopTracker/tree/feature-uat) (work in progress)
+* [PopTracker](https://github.com/black-sliver/PopTracker/)
 
 
-## Applications
+## Applications / Games
 
 * [UATBridge](https://github.com/black-sliver/UATBridge)
+* [Ender Lilies Randomizer](https://github.com/Trexounay/EnderLilies.Randomizer)
 
 
 ## Libraries
